@@ -1,14 +1,15 @@
 {
   "name": "react-redux-boilerplate",
   "version": "1.0.0",
-  "description": "react-simple-boilerplate",
+  "description": "react-simple-boilerplate for akaskills.com",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:janpauldahlke/"
+    "url": "git@github.com:janpauldahlke/react-boilerplate.git"
   },
   "scripts": {
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
+    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "build" : "webpack"
   },
   "author": "jdahlke",
   "license": "ISC",
@@ -19,7 +20,6 @@
     "babel-preset-react": "^6.1.18",
     "css-loader": "^0.28.0",
     "node-sass": "^4.5.2",
-    "react-addons-test-utils": "^0.14.7",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.16.1",
     "webpack": "^1.12.9",
