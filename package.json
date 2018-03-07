@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "build" : "webpack"
+    "build": "webpack"
   },
   "author": "jdahlke",
   "license": "ISC",
