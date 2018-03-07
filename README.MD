@@ -3,4 +3,6 @@
 
 - to start this repo blank do ```git clone https://github.com/janpauldahlke/react-boilerplate.git```
 - navigate through the commits and folders to see the source code
+- ```git fetch```
+- ```git checkout solutions```
 - have fun learning and coding
