@@ -5,4 +5,7 @@
 - this branch contains zookeeper, our first little react-redux app
 
 - to start this repo blank do ```git clone https://github.com/janpauldahlke/react-boilerplate.git```
-- have fun learning and coding
+
+- to use json-server install it by ```npm install -g json-server```
+- navigate into the `api_server` directory and type ```json-server seeds.js```
+- visit the server at `localhost:3000/<routname>`
