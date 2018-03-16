@@ -2,12 +2,28 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { selectAnimal } from '../actions/index';
+import { selectAnimal, getAnimalsList } from '../actions/index';
 
 
 
 class AnimalList extends Component {
 
+  //constructor
+  //-------------------------------
+  constructor() {
+    super();
+  }
+
+  //lifecycle methods
+  //-------------------------------
+  
+  componentWillMount() {
+    this.props.getAnimalList() //can take 10ms // 1s // 5s
+  }
+
+
+   //own methods
+  //-------------------------------
 
   renderAnimalsList() {
     let counter = 0;
@@ -24,10 +40,18 @@ class AnimalList extends Component {
     })
   }
 
+
+  //react render
+  //---------------------------------------
+
   render() {
 
-    //console.log('animalList',this);
+    //console.log(':-)', this.props)
 
+    if(!this.props.animalList){
+      return(<div>Loading....</div>)
+    }
+    
     return(
       <ul className="list-group">
         {this.renderAnimalsList()}
@@ -37,20 +61,18 @@ class AnimalList extends Component {
 }
 
 function mapStateToProps(state){
-  // return {
-  //   foobar : 'kitt',
-  // }
-  //console.log('mapStateToProps', state)
-
+  
   return {
     animals : state.animals,
-    selectedAnimal: state.selectedAnimal
+    selectedAnimal: state.selectedAnimal,
+    animalList : state.animalList,
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    selectAnimal : selectAnimal
+    selectAnimal : selectAnimal,
+    getAnimalList: getAnimalsList
   }, dispatch)
 }
 

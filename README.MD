@@ -10,4 +10,4 @@
 - navigate into the `api_server` directory and type ```json-server seeds.js```
 - visit the server at `localhost:3000/<routname>`
 
-- 
+- add axios by ```npm install --save axios```

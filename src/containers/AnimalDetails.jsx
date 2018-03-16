@@ -7,7 +7,7 @@ class AnimalDetails extends Component {
 
   render(){
 
-    console.log('details', this);
+    //console.log('details', this);
 
     if(!this.props.selectedAnimal){
       return(

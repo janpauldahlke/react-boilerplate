@@ -1,3 +1,5 @@
+import axios from 'axios';
+import { FETCH_ANIMALS } from './constants';
 
 export function selectAnimal(animal) {
   return {
@@ -6,11 +8,22 @@ export function selectAnimal(animal) {
   }
 }
 
-export function fetchAnimals(){
-  //do some AJAX ->  let response = do AJAX magic here
+//this is our
+export function getAnimalsList() {
 
-  return {
-    type : 'FETCH_ANIMAL',
-    payload : response
+  return function(dispatch) {
+    const url = 'http://localhost:3000/animals';
+
+    const request = axios.get(url);
+
+    request.then( response => {
+
+      dispatch({
+        type: FETCH_ANIMALS,
+        payload: response.data
+      })
+    }).catch(err => console.log(err))
   }
 }
+
+
