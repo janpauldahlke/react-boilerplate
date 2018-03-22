@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { selectAnimal, getAnimalsList } from '../actions/index';
+import * as _ from 'lodash';
+
+import { selectAnimal, getAnimalsList, deleteAnimalById } from '../actions/index';
 
 
 
@@ -27,6 +29,7 @@ class AnimalList extends Component {
 
   renderAnimalsList() {
     let counter = 0;
+    //return _.map(this.props.animalList, (animal)=> {
     return this.props.animalList.map((animal) => {
       counter = counter +1;
       return(
@@ -35,9 +38,18 @@ class AnimalList extends Component {
           key={counter}
           className="list-group-item">
           <p>Name : {animal.name}</p>
+          <button
+            onClick={() => { this.onDeleteButtonClick(animal.id)}}
+            className="btn btn-warning">delete</button>
         </li>
       )
     })
+  }
+
+  onDeleteButtonClick(id) {
+    //console.log('deleted id', id)
+    //id like ti use deleteAnimalById(id)
+    this.props.deleteAnimal(id);
   }
 
 
@@ -46,7 +58,7 @@ class AnimalList extends Component {
 
   render() {
 
-    console.log(':-)', this.props)
+    //console.log(':-)', this.props)
 
     if(!this.props.animalList){
       return(<div>Loading....</div>)
@@ -72,7 +84,8 @@ function mapStateToProps(state){
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     selectAnimal : selectAnimal,
-    getAnimalList: getAnimalsList
+    getAnimalList: getAnimalsList,
+    deleteAnimal: deleteAnimalById
   }, dispatch)
 }
 

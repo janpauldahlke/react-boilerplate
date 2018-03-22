@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import AnimalList from '../containers/AnimalList';
 import AnimalDetails from '../containers/AnimalDetails';
+import AnimalAdd from '../containers/AnimalAdd';
 
 class App extends Component {
 
@@ -10,6 +11,13 @@ class App extends Component {
     return(
     <div className="container app-container">
       <h4>Hello to zookeper</h4>
+      
+      <div className="row">
+        <div className="col-12">
+          <AnimalAdd />
+        </div>
+      </div>
+
       <div className="row">
         <div className="col-4">
           <AnimalList />
