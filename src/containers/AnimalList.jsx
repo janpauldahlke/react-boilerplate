@@ -27,7 +27,7 @@ class AnimalList extends Component {
 
   renderAnimalsList() {
     let counter = 0;
-    return this.props.animals.map((animal) => {
+    return this.props.animalList.map((animal) => {
       counter = counter +1;
       return(
         <li
@@ -46,7 +46,7 @@ class AnimalList extends Component {
 
   render() {
 
-    //console.log(':-)', this.props)
+    console.log(':-)', this.props)
 
     if(!this.props.animalList){
       return(<div>Loading....</div>)
